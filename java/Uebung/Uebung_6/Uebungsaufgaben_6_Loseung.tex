@@ -1,0 +1,228 @@
+\documentclass[12pt,a4paper,ngerman]{scrartcl}
+\usepackage[ngerman]{babel}
+\usepackage{amsfonts,amssymb,amsmath,listings,color}
+\usepackage{hyperref}
+\pagestyle{plain}
+
+\subject{\vspace{-3cm}The GAME}
+\title{Übungsaufgaben 6}
+\subtitle{OOP und Klassen}
+\date{}
+
+\definecolor{pblue}{rgb}{0.13,0.13,1}
+\definecolor{pgreen}{rgb}{0,0.5,0}
+\definecolor{pred}{rgb}{0.9,0,0}
+\definecolor{pgrey}{rgb}{0.46,0.45,0.48}
+
+\lstset{language=Java,
+	showspaces=false,
+	showtabs=false,
+	breaklines=true,
+	showstringspaces=false,
+	breakatwhitespace=true,
+	commentstyle=\color{pgreen},
+	keywordstyle=\color{pblue},
+	stringstyle=\color{pred},
+	basicstyle=\ttfamily,
+	tabsize=4,
+	moredelim=[il][\textcolor{pgrey}]{$$},
+	moredelim=[is][\textcolor{pgrey}]{\%\%}{\%\%}
+}
+
+\begin{document}
+	\maketitle
+	
+	\paragraph{Aufgabe 1}\mbox{}
+	\label{A1}
+	Modelliere das Objekt ''Katze'' als Java-Code, also schreibe eine Klasse, mithilfe der nachfolgenden Beschreibung.
+	\begin{itemize}
+		\item[] Eine Katze \emph{hat} eine Anzahl an Pfoten, Augen, Ohren und ein Gewicht. 	
+				Katzen haben von Geburt an Fellfarben.
+				Außerdem gibt es entweder den Zustand \emph{tod} oder \emph{lebendig}.
+		
+		\item[]	Die Katze \emph{kann} laufen und fressen.\\
+				Beim Fressen kann ihr eine bestimmte Menge an Futter übergeben werden, wodurch sie schwerer wird.
+	\end{itemize}
+
+	\subparagraph{Lösung:}
+	\begin{lstlisting}
+	public class Katze
+	{
+		public int amountPaws;
+		public int amountEyes;
+		public int amountEars;
+		
+		public double weight;
+		
+		public String[] furColours;
+		
+		public boolean isAlive;
+		
+		public Katze()
+		{
+			this(4, 2, 2, 5.0, new String[] {"black", "white"}, true);
+		}
+		
+		public Katze(int amountPaws, int amountEyes, int amountEars, double weight, String[] furColours, boolean isAlive)
+		{
+			this.amountPaws = amountPaws;
+			this.amountEyes = amountEyes;
+			this.amountEars = amountEars;
+			this.weight = weight;
+			this.furColours = furColours;
+			this.isAlive = isAlive;
+		}
+		
+		public void move()
+		{
+		}
+		
+		public void eat(double amountFood)
+		{
+			this.weight += amountFood;
+		}
+	}
+	\end{lstlisting}
+	\newpage
+	\paragraph{Aufgabe 2}\mbox{}
+	Erweitere die Katze aus \hyperref[A1]{Aufgabe 1}:\\
+	Eine Katze verliert Gewicht, je nachdem wie weit sie gelaufen ist.
+	Falls die Katze schwerer als 10 kg ist, stirbt sie an den Folgen des Übergewichts (Beachte: Eine tote Katze kann nicht mehr fressen, ...).
+	
+	\subparagraph{Lösung:}
+	\begin{lstlisting}
+	public class Katze
+	{
+		public int amountPaws;
+		public int amountEyes;
+		public int amountEars;
+		
+		public double weight;
+		
+		public String[] furColours;
+		
+		public boolean isAlive;
+		
+		public Katze()
+		{
+			this(4, 2, 2, 5.0, new String[] {"black", "white"}, true);
+		}
+		
+		public Katze(int amountPaws, int amountEyes, int amountEars, double weight, String[] furColours, boolean isAlive)
+		{
+			this.amountPaws = amountPaws;
+			this.amountEyes = amountEyes;
+			this.amountEars = amountEars;
+			this.weight = weight;
+			this.furColours = furColours;
+			
+			if (weight <= 10.0)
+			{
+				this.isAlive = isAlive;
+			}
+		}
+		
+		public void move(double distance)
+		{
+			if (isAlive)
+			{
+				this.weight -= distance / 3;
+			}
+		}
+		
+		public void eat(double amountFood)
+		{
+			if (isAlive)
+			{
+				this.weight += amountFood;
+				
+				if (this.weight > 10.0)
+				{
+					this.isAlive = false;
+				}
+			}
+		}
+	}
+	\end{lstlisting}
+	\newpage
+	\paragraph{Aufgabe 3}\mbox{}
+	Modelliere das Objekt ''Person'' als Java Klasse vollständig, d.h. versuche dabei alle möglichen Member und Methoden zu finden.
+	
+	\subparagraph{Lösung:}
+	Hier gibt es viel Freiheiten, daher ist unten nur ein Lösungsvorschlag einer Teillösung.
+	\begin{lstlisting}
+	public class Person
+	{
+		public String name;
+		public String address;
+		
+		public String sex;
+		
+		public int age;
+		
+		public Head head;
+		public Arm[] arms;
+		public Leg[] legs;
+		
+		// ...
+		
+		public void moveArm(int index, double... angle)
+		{
+		}
+		
+		public void moveLeg(int index, double... angle)
+		{
+		}
+		
+		// ...
+		
+		public void fart(double loudness)
+		{
+		}
+		
+		// ...
+	}
+	\end{lstlisting}
+	\newpage
+	\paragraph{Aufgabe 4}\mbox{}
+	Modelliere die Member und Methoden des Objekts ''Bankautomat'' als Text. Als Hilfe kannst du die Begriffe \emph{hat} und \emph{kann} verwenden. Danach programmierst du das.
+
+	\subparagraph{Lösung:}
+	Ein ''Bankautomat'' \emph{hat} Display, Eingabebereich, Kartenschlitz, Ausgabeschlitz, Tresor, $\dots$\\
+	Ein ''Bankautomat'' \emph{kann} Karte einziehen und ausgeben, Geld ausgeben, Eingaben entgegennehmen, Ausgaben auf Display machen, $\dots$
+	\begin{lstlisting}
+	public class Bankautomat
+	{
+		public Display display;
+		public InputDevice inputDevice;
+		public Cardholder cardholder;
+		public MoneyOutput moneyOutput;
+		public Safe safe;
+		
+		// ...
+		
+		public void putCardIn()
+		{
+		}
+		
+		public void putCardOut()
+		{
+		}
+		
+		public void outputMoney(double amountOfMoney)
+		{
+		}
+		
+		public void handleInput()
+		{
+		}
+		
+		public void print(String text)
+		{
+		}
+		
+		// ...
+	}
+	\end{lstlisting}
+
+\end{document}

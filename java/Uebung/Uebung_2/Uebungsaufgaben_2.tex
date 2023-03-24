@@ -1,0 +1,140 @@
+\documentclass[12pt,a4paper,ngerman]{scrartcl}
+\usepackage[ngerman]{babel}
+\usepackage{amsfonts,amssymb,amsmath}
+\pagestyle{plain}
+
+\subject{\vspace{-3cm}The GAME}
+\title{Übungsaufgaben 2}
+\subtitle{Aussagenlogik}
+\date{}
+
+\begin{document}
+	\maketitle
+	
+	\paragraph{Aufgabe 1}\mbox{}\\
+	Was ist eine Aussage?
+	
+	\paragraph{Aufgabe 2}\mbox{}\\
+	Welche der folgenden sind Aussagen und wie lautet die negierte Aussage?
+	\begin{itemize}
+		\item[a)] Die Sonne scheint.
+		\item[b)] Der Fernseher ist aus.
+		\item[c)] Kleiner Otter.
+		\item[d)] $y < x$
+		\item[e)] $x - z$
+	\end{itemize}
+	
+	\paragraph{Aufgabe 3}\mbox{}\\	
+	In der Aussagenlogik geht es ja u.a. darum, Aussagen zu verknüpfen und den Wahrheitswert der verknüpften Aussage zu ermitteln. Für die Verknüpfung von Aussagen stehen verschiedene Logik-Operatoren, auch Junktoren genannt, bereit. Wie heißen diese, wie schreibt man sie in der Mathematik und wie sieht die Wertetabelle aus?
+	
+	\paragraph{Aufgabe 4}\mbox{}\\	
+	Mathematiker führen ja v.a. beweise durch. Dabei sind Beweise logische Schlussfolgerungen. Man nimmt also eine Aussage her und aus dieser schlussfolgert man solange mit wahren Aussagen, bis man das zu Beweisende hergeleitet hat. Dadurch, dass nur wahre Aussagen verwendet werden ist die Mathematik korrekt (so ziemlich als einzige Wissenschaft [neben der Informatik]). Die Schlussfolgerungen fußen dabei auf der sogenannten \emph{(materiale) Implikation}. Die Implikation lässt sich folgendermaßen in Worte fassen ''Wenn ..., dann ...''. Die Implikation soll uns an anderer Stelle nochmal etwas genauer begegnen. Doch hier wollen wir einfach mal einen sehr kleinen Beweis führen. Beweise folgende Aussage:
+	\begin{itemize}
+		\item[] Das Quadrat einer geraden natürlichen Zahl, ist wieder gerade.
+	\end{itemize}
+	
+	\paragraph{Aufgabe 5 - Zusatz}\mbox{}\\
+	Aufgabe 4 ist eigentlich gar nicht schwer - aber sehr kurz. Der Beweis hier ist immer noch kurz, aber etwas länger, als der aus Aufgabe 4. Deshalb ist es Zusatz.
+	Beweise folgende Aussage:
+	\begin{itemize}
+		\item[] $\sqrt{2}$ ist irrational
+	\end{itemize}
+	\emph{Hinweis: Das Resultat aus Aufgabe 4 wird hier benötigt.}
+
+	\paragraph{Aufgabe 6}\mbox{}\\
+	Kommen wir zur Implikation zurück. Die Implikation ist erfahrungsgemäß am Anfang nicht so leicht, denn es gibt eine Zeile in der Wahrheitstabelle, die vielen erst mal Kopfschmerzen bereitet.
+	Das Zeichen für die Implikation ist $\Rightarrow$. Nehmen wir uns mal ein Beispiel her und leiten uns die Wahrheitstabelle für die Implikation her:
+	\begin{itemize}
+		\item[] $A = $ Das Wetter ist gut.
+		\item[] $B = $ Ich gehe ins Freibad.
+	\end{itemize}
+	In Worten ist $A \Rightarrow B$: Wenn das Wetter gut ist, dann gehe ich ins Freibad.\\
+	Jetzt nehmen wir an, das Wetter ist gut und ihr seht mich im Freibad. Dann habe ich offensichtlich nicht gelogen. Wenn schlechtes Wetter ist und ihr seht mich nicht im Freibad, dann ist ja auch irgendwie alles gut. Wenn schlechtes Wetter ist, aber ihr seht mich dieses Mal im Freibad, dann fragt ihr euch vielleicht, warum  zur Hölle man bei schlechtem Wetter schwimmen geht, aber gelogen hab ich nicht. Ich gabe ja nur gesagt, was ich mache, wenn gutes Wetter ist, nicht aber wenn schlechtes Wetter ist! Lediglich, wenn gutes Wetter ist, ich aber nicht im Freibad bin, dann hab ich gelogen! So ein Drecksack, was?\\
+	Zusammengefasst ergibt sich folgende allgemeine Wahrheitstabelle:\\
+	$\begin{array}{cc|c}
+		A & B & A \Rightarrow B\\
+		\hline
+		0 & 0 & 1\\
+		0 & 1 & 1\\
+		1 & 0 & 0\\
+		1 & 1 & 1
+	\end{array}$\\
+	In Worten heißt das, dass wenn ihr aus wahren Aussagen falsche Aussagen folgert, dann ist das einfach falsch! Also wenn ihr folgert $1+2=3 \Rightarrow 1=3$ dann stimmt das wohl offensichtlich nicht, weil $1 \ne 3$ gilt! Wenn ihr aber $4 \text{ ist prim} \Rightarrow 2 \cdot 5 = 10$ habt, dann stimmt das doch. $4 \text{ ist prim}$ ist offensichtlich falsch, aber $2 \cdot 5 = 10$ ist wahr, also ist die Aussage wahr. Achso übrigens, die Umkehrung gilt im Allgemeinen nicht! Also $A \Rightarrow B$ ist nicht unbedingt das Gleiche, wie $B \Rightarrow A$ (siehe nächste Aufgabe)!
+	Naja, also lassen wir das. Hier mal ein paar konkrete Implikationen, für die ihr den eindeutigen Wahrheitswert ermitteln könnt:
+	\begin{itemize}
+		\item[a)] Die Sonne ist der nächste Planet zur Erde $\Rightarrow$ Pluto ist kein Planet
+		\item[b)] Eine Flasche ist nach dem Trinken voller als davor $\Rightarrow$ Kreuzberg liegt neben Schönefeld
+		\item[c)] $2^2 = 4 \Rightarrow 3^2 = 5$
+		\item[d)] $34 \ne 35 \Rightarrow 18-1=17$
+	\end{itemize}
+	
+	\paragraph{Aufgabe 7}\mbox{}\\
+	Nun, es gibt Aussagen, die zu keiner Zeit stimmen, und es gibt Aussagen, die immer stimmen. Ersteres nennt man \emph{unerfüllbar} und letzteres ist \emph{allgmeingültig}. Allgemeingültige Aussagen nennt man auch \emph{Tautologie}. Alles dazwischen heißt schlicht und einfach \emph{erfüllbar}. Eine Tautologie ist also immer wahr? JA! Das bringt uns mal etwas weiter und wir kommen zur \emph{Äquivalenz}, als Zeichen $\Leftrightarrow$. In Worten sagt man ''$A$ ist äquivalent zu $B$'' oder, v.a. in der Mathematik zu finden: ''$A$ genau dann, wenn $B$''. Vielleicht erinnert ihr euch noch an das \emph{XOR}, das auch \emph{Antivalenz} heißt. Warum das so ist, werden wir jetzt sehen.\\
+	Bei der Antivalenz ist die Gesamtaussage nur dann wahr, wenn ausschließlich eine der beiden Aussagen wahr ist, also mit Wahrheitstabelle ausgedrückt:\\
+	$\begin{array}{cc|c}
+		A & B & A \oplus B\\
+		\hline
+		0 & 0 & 0\\
+		0 & 1 & 1\\
+		1 & 0 & 1\\
+		1 & 1 & 0
+	\end{array}$\\
+	Der Äquivalenz-Operator ist dazu Gegensätzlich:\\
+	$\begin{array}{cc|c}
+		A & B & A \Leftrightarrow B\\
+		\hline
+		0 & 0 & 1\\
+		0 & 1 & 0\\
+		1 & 0 & 0\\
+		1 & 1 & 1
+	\end{array}$\\
+	Und das gilt immer! Wie war das? Wenn etwas immer gilt, dann ist das eine Tautologie? Können wir das mit einer Wertetabelle mal zeigen? JA! Wir können mit einer Wahrheitstabelle beweise führen! Übrigens ein Teil der Künstlichen Intelligenz beschäftigt sich mit automatischen Beweisern. Die machen dann im Grunde nichts anderes, als Logik und mit Wertetabellen Beweise führen. Nun aber zur Wahrheitstabelle. Zu zeigen ist folgende Aussage: $(\overline{A \oplus B}) \Leftrightarrow (A \Leftrightarrow B)$. Dazu werden wir die Aussagen einzeln aufschreiben und dann zusammen setzen:\\
+	$\begin{array}{cc|c|c|c|c}
+		A & B & A \oplus B & \overline{A \oplus B} & A \Leftrightarrow B & (\overline{A \oplus B}) \Leftrightarrow (A \Leftrightarrow B)\\
+		\hline
+		0 & 0 & 0 & 1 & 1 & 1\\
+		0 & 1 & 1 & 0 & 0 & 1\\
+		1 & 0 & 1 & 0 & 0 & 1\\
+		1 & 1 & 0 & 1 & 1 & 1
+	\end{array}$\\
+	Das gilt also immer! Streng genommen sind $\overline{A \oplus B}$ und $A \Leftrightarrow B$ Formeln für sich. Wenn wir in der Aussagenlogik Aussagen über Formeln machen (Metalogik), dann wäre die korrekte Schreibweise $(\overline{A \oplus B}) \equiv (A \Leftrightarrow B)$. Aber das $\equiv$ bedeutet gerade, dass die beiden Formeln genau dieselben Modelle haben, also unter den gleichen Interpretationen wahr sind (siehe Aufgabe 9). Und das ist genau dann der Fall, wenn $(\overline{A \oplus B}) \Leftrightarrow (A \Leftrightarrow B)$ eine Tautologie ist. Deshalb ist das hier in Ordnung für uns.\\
+	Führt nach obigem Schema mit folgenden Aufgaben durch und zeigt diese Tautologien:
+	\begin{itemize}
+		\item[a)] $(A \Rightarrow B) \Leftrightarrow (\overline{A} \vee B)$
+		\item[b)] $(A \Rightarrow B) \Leftrightarrow (\overline{B} \Rightarrow \overline{A})$
+		\item[c)] $((A \Rightarrow B) \wedge (B \Rightarrow A) \Leftrightarrow (A \Leftrightarrow B)$
+		\item[d)] $(A \vee (A \wedge B)) \Leftrightarrow A$
+	\end{itemize}
+	Übrigens diese vier Tautologien sind wichtig. a) ist die Implikation mit den ''Grundoperatoren'' ausgedrückt (Mit den Operatoren $\wedge,\ \vee$ und \emph{NOT}, kann man in der Aussagenlogik alle Aussagen verknüpfen, d.h. es ist ein vollständiges Set Operatoren für die Aussagenlogik). c) zeigt die Beziehung zwischen Implikation und Äquivalenz. Etwas ist Äquivalent, wenn es in beide Richtung impliziert werden, also wenn B aus A und A aus B folgt. c) heißt Kontraposition und ist das Grundprinzip für den \emph{indirekten Beweis}, eine Beweismethode der Mathematik. d) nennt sich Absorption.
+	
+	\paragraph{Aufgabe 8}\mbox{}\\
+	Tautologien müssen nicht zwangsläufig durch Äquivalenzen entstehen. Zeige, dass folgende Aussage auch eine Tautologie ist:
+	\begin{itemize}
+		\item[] $((\overline{A} \Rightarrow B) \wedge \overline{B}) \Rightarrow A$
+	\end{itemize}
+	Diese Tautologie nennt sich Widerspruch und ist Grundlage des Widerspruchsbeweis (Aufgabe 5 ist ein Widerspruchsbeweis, sofern man den Beweis wie Euklid geführt hat).
+	\\\\
+	\emph{(Anmerkung, sowohl die Kontraposition, als auch der Widerspruch führen zu einem Widerspruch! Beides sind also Widerspruchsbweise, es gilt also quasi Widerspruchsbeweis = indirekter Beweis! Es sind also nur zwei Arten, wie man einen Widerspruchsbeweis angehen kann.)}
+	
+	\paragraph{Aufgabe 9}\mbox{}\\
+	Wir haben jetzt ganz schön viel Handwerkszeug, um aus zusammengesetzten Aussagen Wahrheitswerte zu ermitteln. Wir nehmen nun noch eine Variable mit hinzu. Übrigens: Eine Zeile einer Wahrheitstabelle wird Interpretation genannt. Die Wahrheitstabelle ist also eigentlich nichts anderes, als alle möglichen Kombinationen der Wahrheitswerte der Variablen (alle Interpretationen) aufgelistet. Eine Wahrheitstabelle für zwei Variablen sieht also irgendwie so aus:\\
+	$\begin{array}{cc|c}
+	A & B & Y\\
+	\hline
+	0 & 0 & \mbox{ }\\
+	0 & 1 & \mbox{ }\\
+	1 & 0 & \mbox{ }\\
+	1 & 1 & \mbox{ }
+	\end{array}$\\
+	Wie sieht aber eine Wahrheitstabelle aus, die 3 (A, B und C) oder 4 (A, B, C und D) Variablen hat? Konstruiere diese mal.
+	
+	\paragraph{Aufgabe 10}\mbox{}\\
+	Nachfolgend sind noch ein paar Aussagen, deren Wahrheitstabelle ermittelt werden soll. Achte dabei auf die Rechenregeln: ''UND vor ODER'' und ''ODER vor Implikation''. Aber Klammern natürlich vor Allem!
+	\begin{itemize}
+		\item[a)] $A \wedge B \vee C$
+		\item[b)] $A \vee (B \wedge C) \Rightarrow C$
+		\item[c)] $C \Leftrightarrow B \wedge B \vee A$
+		\item[d)] $A \vee B \overline{A} \wedge C \Rightarrow B \wedge A$
+	\end{itemize}
+	
+\end{document}

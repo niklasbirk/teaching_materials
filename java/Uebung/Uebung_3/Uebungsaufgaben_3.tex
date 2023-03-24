@@ -1,0 +1,157 @@
+\documentclass[12pt,a4paper,ngerman]{scrartcl}
+\usepackage[ngerman]{babel}
+\usepackage{amsfonts,amssymb,amsmath,listings,color}
+\pagestyle{plain}
+
+\subject{\vspace{-3cm}The GAME}
+\title{Übungsaufgaben 3}
+\subtitle{Komplemente und Kontrollstrukturen}
+\date{}
+
+\definecolor{pblue}{rgb}{0.13,0.13,1}
+\definecolor{pgreen}{rgb}{0,0.5,0}
+\definecolor{pred}{rgb}{0.9,0,0}
+\definecolor{pgrey}{rgb}{0.46,0.45,0.48}
+
+\lstset{language=Java,
+	showspaces=false,
+	showtabs=false,
+	breaklines=true,
+	showstringspaces=false,
+	breakatwhitespace=true,
+	commentstyle=\color{pgreen},
+	keywordstyle=\color{pblue},
+	stringstyle=\color{pred},
+	basicstyle=\ttfamily,
+	tabsize=4,
+	moredelim=[il][\textcolor{pgrey}]{$$},
+	moredelim=[is][\textcolor{pgrey}]{\%\%}{\%\%}
+}
+
+\begin{document}
+	\maketitle
+	
+	\paragraph{Aufgabe 1}\mbox{}\\
+	Führe für folgende Binärzahlen die bitweise Negation durch:
+	\begin{itemize}
+		\item[a)] $0_2$
+		\item[b)] $0000_2$
+		\item[c)] $1111_2$
+		\item[d)] $1010_2$
+		\item[e)] $1100\ 0011\ 1001\ 1011\ 0111_2$
+	\end{itemize}
+	
+	\paragraph{Aufgabe 2}\mbox{}\\
+	Wie lautet das Einskomplement folgender Zahlen bei 8 Bit (Man gebe zudem die Dezimalzahlen der unten stehenden Binärzahlen und ihres Einskomplements an):
+	\begin{itemize}
+		\item[a)] $0000\ 0101_2$
+		\item[b)] $0000\ 1111_2$
+		\item[c)] $0010\ 0000_2$
+		\item[d)] $0111\ 1111_2$
+	\end{itemize}
+	
+	\paragraph{Aufgabe 3}\mbox{}\\	
+	Man gebe die Dezimalzahl zu den unten stehenden Einskomplementen an (8 Bit):
+	\begin{itemize}
+		\item[a)] $1000\ 0101_2$
+		\item[b)] $1000\ 1111_2$
+		\item[c)] $1010\ 0000_2$
+		\item[d)] $1111\ 1111_2$
+	\end{itemize}
+	
+	\paragraph{Aufgabe 4}\mbox{}\\	
+	Was stört bei der Einskomplement-Darstellung?
+	
+	\paragraph{Aufgabe 5}\mbox{}\\
+	Ermittelt zu folgenden Zahlen die Zweikomplement-Darstellung bei 8 Bit (Binärzahlen und Dezimalzahlen angeben).
+	\begin{itemize}
+		\item[a)] $5$
+		\item[b)] $15$
+		\item[c)] $32$
+		\item[d)] $127$
+	\end{itemize}
+
+	\paragraph{Aufgabe 6}\mbox{}\\
+	Rechnet folgende Ausdrücke aus. Die Zahlen sind dabei alle in der Zweikomplement-Darstellung gegeben (8 Bit).
+	\begin{itemize}
+		\item[a)] $5 + (-21)$
+		\item[b)] $15 + (-5)$
+		\item[c)] $32 + 4$
+		\item[d)] $127 + (-127)$
+	\end{itemize}
+	
+	\paragraph{Aufgabe 7}\mbox{}\\
+	Rechnet folgende Ausdrücke aus. Die Zahlen sind dabei alle \emph{nicht} in der Zweikomplement-Darstellung gegeben, d.h. die Zahlen (die nach dem Minus) sind umzurechnen (8 Bit).
+	\begin{itemize}
+		\item[a)] $19 - 28$
+		\item[b)] $56 - 9$
+		\item[c)] $1 - 2$
+		\item[d)] $3 - 127$
+	\end{itemize}
+	
+	\paragraph{Aufgabe 8}\mbox{}\\
+	Schreibe ein einfaches Java-Programm, welches einem Monat vom Benutzer einliest (mithilfe des „java.util.Scanner“).
+	Verwende dafür die Zahlen 1 bis 12 (1 = Januar, 2 = Februar, ..., 12 = Dezember). Für jeden Monat soll nun die Anzahl der Tage ausgegeben werden.
+	Nutze hierzu die \emph{einfache Verzweigung}.
+	
+	\paragraph{Aufgabe 9}\mbox{}\\
+	Schreibe ein einfaches Java-Programm, welches einem Monat vom Benutzer einliest (mithilfe des „java.util.Scanner“).
+	Verwende dafür die Zahlen 1 bis 12 (1 = Januar, 2 = Februar, ..., 12 = Dezember). Für jeden Monat soll nun die Anzahl der Tage ausgegeben werden.
+	Nutze hierzu die \emph{Mehrfachverzweigung}.
+	
+	\paragraph{Aufgabe 10}\mbox{}\\
+	Kann Aufgabe 8 mit 3 oder weniger If-Statements gelöst werden? Wenn ja wie? Wenn nein warum nicht?
+	
+	\paragraph{Aufgabe 11}\mbox{}\\
+	Wie oft wird die folgende Schleife ausgeführt und warum?
+	\begin{lstlisting}
+	int i = 10;
+	do { 
+		i = i - 3;
+	} while (i  > 5);
+	\end{lstlisting}
+	
+	\paragraph{Aufgabe 12}\mbox{}\\
+	Welche Zahlen werden bei diesen Schleifen ausgegeben? Und wie oft werden diese Ausgeführt?
+	\\\\
+	a) \begin{lstlisting}
+	for( int i=1; i <= 10; i++ ){
+		System.out.println( i );
+	} 
+	\end{lstlisting}
+	b) \begin{lstlisting}
+	for( int i=1; i <= 10; i = i+2 ){
+		System.out.println( i );
+	}  
+	\end{lstlisting}
+	c) \begin{lstlisting}
+	for( int i=1; i <= 10; i = i*2 ){
+		System.out.println( i );
+	} 
+	\end{lstlisting}
+	d) \begin{lstlisting}
+	for( int i=1; i < 10; i = i+2 ){
+		if (i >= 5) {
+			System.out.println( i );
+			i--;
+		} else {
+			System.out.println( i );
+		} 
+	} 
+	\end{lstlisting}
+	\newpage
+	e) \begin{lstlisting}
+	int i = 0;
+	do { 
+		if (i < 4) {
+			System.out.println( i );
+		}
+		if (i > 4) {
+			System.out.println( i );
+		} else {
+			i--;
+		} 
+		i = i+2;
+	} while (i  < 10);  
+	\end{lstlisting}
+\end{document}

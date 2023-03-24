@@ -1,0 +1,99 @@
+\documentclass[12pt,a4paper,ngerman]{scrartcl}
+\usepackage[ngerman]{babel}
+\usepackage{amsfonts,amssymb,amsmath,listings,color}
+\pagestyle{plain}
+
+\subject{\vspace{-3cm}The GAME}
+\title{Übungsaufgaben 4}
+\subtitle{Arrays}
+\date{}
+
+\definecolor{pblue}{rgb}{0.13,0.13,1}
+\definecolor{pgreen}{rgb}{0,0.5,0}
+\definecolor{pred}{rgb}{0.9,0,0}
+\definecolor{pgrey}{rgb}{0.46,0.45,0.48}
+
+\lstset{language=Java,
+	showspaces=false,
+	showtabs=false,
+	breaklines=true,
+	showstringspaces=false,
+	breakatwhitespace=true,
+	commentstyle=\color{pgreen},
+	keywordstyle=\color{pblue},
+	stringstyle=\color{pred},
+	basicstyle=\ttfamily,
+	tabsize=4,
+	moredelim=[il][\textcolor{pgrey}]{$$},
+	moredelim=[is][\textcolor{pgrey}]{\%\%}{\%\%}
+}
+
+\begin{document}
+	\maketitle
+	
+	\paragraph{Aufgabe 1}\mbox{}\\
+	Gegeben sind verschiedene Längen bzw. Größen von Arrays. Gebe die jeweiligen Start- und Endindizes an.
+	
+	\begin{itemize}
+		\item[a)] 1
+		\item[b)] 42
+		\item[c)] 13
+		\item[d)] 101
+		\item[e)] 3141592
+		\item[f)] 0 $\qquad$ (Achtung fies!)
+	\end{itemize}
+
+	\paragraph{Aufgabe 2}\mbox{}\\
+	Gegeben sei ein Array der Länge 100. Welchen Index haben die folgenden "Plätze".
+
+	\begin{itemize}
+		\item[a)] 1
+		\item[b)] 42
+		\item[c)] 13
+		\item[d)] 101
+	\end{itemize}
+
+	\paragraph{Aufgabe 3}\mbox{}\\
+	Gegeben sei ein Array der Länge $n$. Ganz allgemein, welchen Index hat die Stelle $k$, wobei $k \le n$?
+
+	\paragraph{Aufgabe 4}\mbox{}\\
+	Erstelle für folgende Angaben die Arrays in Java-Code.
+
+	\begin{itemize}
+		\item[a)] Datentyp: \emph{int}; Länge: \emph{18}
+		\item[b)] Datentyp: \emph{String}; Länge: \emph{23}
+		\item[c)] Kommazahlen, Länge: 5001
+		\item[d)] Datentyp: \emph{char}; Länge: \emph{7}
+	\end{itemize}
+
+	\paragraph{Aufgabe 5}\mbox{}\\
+	Erstelle folgende Arrays in Java, die als Inhalt die dastehenden Werte haben. Wir haben zwei Varianten kennen gelernt. Versuche beide zu verwenden.
+	
+	\begin{itemize}
+		\item[a)] Datentyp: \emph{int}; Werte: \emph{0, 9, 2, 8, 3, 7, 4, 6, 5}
+		\item[b)] Datentyp: \emph{long}; Werte: \emph{-100, 100, -50, 50, 123456789}
+		\item[c)] Datentyp: \emph{String}; Werte: \emph{''Ich'', ''liebe'', ''Josh''}
+		\item[d)] Datentyp: \emph{double}; Werte: \emph{3.141, 0.0005926, 5358.9793, Math.pi}
+	\end{itemize}
+
+	\paragraph{Aufgabe 6}\mbox{}\\
+	Erstelle ein Programm, das das Array \emph{\{0, 1, 2, 3, 4, 5, 6, 7, 8, 9\}} in umgekehrter Reihenfolge ausgibt.
+	
+	\paragraph{Aufgabe 7}\mbox{}\\
+	Schreibe ein Programm, das von der Kommandozeile zwei Zahlen einliest. Diese Zahlen sollen als Start- und Endwert für Zufallszahlen dienen. In ein Array der Länge 10 lässt du dann 10 Zufallszahlen, die zwischen dem Start- und Endwert liegen, reinschreiben und gibst das Array aus.
+	Für die Zufallszahlen kannst du folgendes verwenden:
+	
+	\begin{lstlisting}
+	Random rand = new Random();
+	
+	nextInt(int bound)
+	// Returns a pseudorandom, uniformly distributed int value between 0 (inclusive) and the specified value (exclusive), drawn from this random number generator's sequence.
+	\end{lstlisting}
+	
+	\paragraph{Aufgabe 8}\mbox{}\\
+	Du hast ein Array mit der Länge 5 und mit folgendem Inhalt: \emph{\{0, 1, 2, 3, 4\}}. Du möchtest nun zusätzlich die Zahlen 7 und 8 abspeichern. Welche Möglichkeiten gibt es, das zu tun?
+	
+	\paragraph{Aufgabe 9}\mbox{}\\
+	Schreibe deine Ideen auf, für was man 2D-Arrays verwenden könnte.
+
+\end{document}
